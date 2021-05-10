@@ -1,0 +1,17 @@
+create database desafioDatainfo;
+
+create table usuario (
+id bigserial primary key,
+nome varchar(255),	
+email varchar(255),
+senha varchar(50)
+);
+
+create table telefone (
+id bigserial primary key,
+ddd int,
+numero varchar(15),
+tipo char(8),
+idusuario bigint,
+constraint fk_usuario foreign key (idusuario) references usuario (id)	
+);
